@@ -14,6 +14,13 @@ int main (){
     *(names + 2) = "Jin";
     *(names + 3) = "Joe";
     *(names + 4) = "Junio";
+
+    cout << "Original array: ";
+    displayArray(names, SIZE);
+    names = reverseArray(names,SIZE);
+    displayArray(names, SIZE);
+
+    return 0;
 }
 
 string*reverseArray(string * arr, const int size){
