@@ -1,3 +1,6 @@
+//COMSC 210 | Lab 7 | Anisha Rayapudi
+//IDE used: VS 2022
+
 #include <iostream>
 
 using namespace std;
@@ -18,13 +21,16 @@ int main (){
     cout << "Original array: ";
     displayArray(names, SIZE);
     names = reverseArray(names,SIZE);
+    cout << "Reversed array: ";
     displayArray(names, SIZE);
 
     return 0;
 }
-
+//reverses the array of names
+//argument: pointer to array elements string and const int size
+//returns: pointer to modified array
 string*reverseArray(string * arr, const int size){
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size/2; i++){
         string temp = *(arr + i);
         *(arr + i) = *(arr+(size - 1 - i));
         *(arr + (size - 1 - i)) = temp;
@@ -32,6 +38,9 @@ string*reverseArray(string * arr, const int size){
     return arr;
 }
 
+//displays the array of names
+//argument: pointer to array elements string and const int size
+//returns: none
 void displayArray(string * arr, const int size){
     for (int i =0; i < size; i++){
         cout << *(arr + i) << " ";
